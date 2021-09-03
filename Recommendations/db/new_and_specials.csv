@@ -1,0 +1,5 @@
+specials_id,canteen_id,food_id,date,type
+1,1,2,2019-6-28,new
+2,2,5,2019-6-28,special
+3,1,5,2020-12-13,new
+4,2,8,2020-12-13,special

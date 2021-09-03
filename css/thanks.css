@@ -1,0 +1,101 @@
+*{
+  color:#654321;
+}
+.check{
+  fill:none;
+  stroke: #47CF73;
+  stroke-width: 4px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+.check {
+  stroke-dasharray: 60 200;
+  animation-delay: 1.7s;
+  animation: check 2s cubic-bezier(0.67, 0, 0.1, 1) forwards 0.0s; 
+  opacity: 0;
+}
+
+@-webkit-keyframes check {
+  from {stroke-dashoffset: 60;
+opacity: 1;}
+
+  to {stroke-dashoffset: 293;
+  opacity: 1;}
+}
+
+
+.thankyou{
+  display: block;
+  width: 100%;
+}
+
+h2{
+  margin-bottom: 10px;
+}
+p{
+  margin-bottom: 30px;
+}
+
+
+.smaller {
+  width: 130px;
+  margin: 20px auto -50px auto;
+}
+
+/*****card css**/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5D3B3;
+   
+}
+h1{
+    text-align: center;
+    color: #4181ee;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+   max-width: 300px;
+    min-height: 250px;
+    background: #08f39d;
+    padding: 30px;
+    box-sizing: border-box;
+    color: #FFF !important;
+    margin:20px;
+    box-shadow: 0px 2px 18px -4px rgba(0,0,0,0.75);
+}
+
+.card-title{
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+.card-content{
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+.card-btn{
+    all: unset;
+    display: block;
+    margin-left: auto;
+    border: 2px solid #FFF;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+    transition: all 0.5s;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+.card-btn:hover{
+   color:#02b875 !important;
+   background: #FFF;
+}
