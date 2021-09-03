@@ -1,5 +1,0 @@
-food_id,title,canteen_id,price,num_orders,category,avg_rating,num_rating,tags,score
-9,Sp.Cofee,1,40,50,Beverage,4.8,30,"drink, sweet, cold",4.33469387755102
-5,Manchurian,1,60,50,Chinese,4.6,30,"veg, spicy, hot",4.2326530612244895
-7,Chai,1,10,70,Beverage,4.0,100," drink, sweet, hot",3.966459627329192
-8,Cofee,1,30,25,Beverage,3.5,50,"drink, sweet, hot",3.6279187817258887
