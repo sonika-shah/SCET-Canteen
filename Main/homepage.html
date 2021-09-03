@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--link for google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!--link or glyphicon symbols-->
+
+
+  <!--Bootstrap links-->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <!--DAtabase link fireabse script-->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body>
+  <!---------------navbar begins--------------->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">SCET canteen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+          <a class="nav-link" href="homepage.html"><i class="fa fa-home" aria-hidden="true"></i>
+            </span>&nbsp;Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#jump_to_about_us"><i class="fa fa-info-circle" aria-hidden="true"></i>
+            </span>&nbsp;About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-list" aria-hidden="true"></i>&nbsp;Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#jump_to_breakfast">Breakfast</a>
+            <a class="dropdown-item" href="#jump_to_lunch">Lunch</a>
+            <a class="dropdown-item" href="#jump_to_siders">Siders</a>
+            <a class="dropdown-item" href="#jump_to_beverages">Bevrages</a>
+            <a class="dropdown-item" href="./Recommendations/index.html">Recommended</a>
+
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactus"><i class="fa fa-phone" aria-hidden="true"></i>
+            </span>&nbsp;Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span
+                class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
+          </li>
+          <li id="user_div" class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span id="user_para">User</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">User Menu</a>
+              <a class="dropdown-item" onclick="signOut()" href="#">Logout</a>
+            </div>
+          </li>
+          <li id="login_div" class="nav-item">
+            <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal"
+              style="background-color: #6A4C3E;margin:0px 5px ;border-color: #4D413B;">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              Login
+            </button>
+          </li>
+          <li id="signup_div" class="nav-item">
+            <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#signupModal"
+              style="background-color: #6A4C3E;margin:0px 5px ;border-color: #4D413B;">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              SignUP
+            </button>
+          </li>
+
+        </ul>
+      </form>
+    </div>
+
+  </nav>
+  <!---------------navbar ends--------------->
+
+  <!---------------header begins--------------->
+  <div class="header" id="topheader">
+
+
+    <section class="header-contain">
+      <div class="center-div" style="margin-top: 7%;">
+        <h1 class="font-weight-bold">Welcome to SCET CANTEEN!</h1>
+        <p>Our trust Good food and Hygine.</p>
+        <div class="header-buttons">
+          <a href="#jump_to_breakfast">Order Now</a>
+          <!--a href="#contactus">Book Table</a>-->
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!---------------header ends--------------->
+
+  <!---------About us Starts------------->
+  <section id="jump_to_about_us"></section>
+  <section class="header-aboutus">
+    <div class="container">
+      <h3>About us</h3>
+      <div class="row">
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class=" fa-2x fa fa-cutlery" aria-hidden="true"></i></a>
+
+          <h2>Best Quality</h2>
+          <p> Our quality food variety promotes healthy eating habits,with our wide range of optimized breakfast,
+            snacks, and lunch menu.</p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class=" fa-2x fa fa-plus-square" aria-hidden="true"></i></a>
+
+          <h2>Hygiene</h2>
+          <p> Amidst the current situation of pandemic,delivery of safe, hygienic food to our customers is paramount for
+            us.</p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class=" fa-2x fa fa-thumbs-up" aria-hidden="true"></i></a>
+
+          <h2>Excellent Service</h2>
+          <p> We ensure to provide outstanding customer service throughout the whole dining experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!---------About us end------------->
+
+  <!---------Menu start------------->
+
+  <section class="menu" id="menu-price">
+    <div class="container headings text-center">
+      <h1 class="bg-dark text-center font-weight-bold text-white "> Menu</h1>
+    </div>
+    <!---------Breakfast------------->
+    <section id="jump_to_breakfast"><br><br><br></section>
+
+    <div class="container">
+      <h3 class="text-center text-dark"><u> Breakfast Menu </u></h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" id="item1-image" src="" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title" id="item1-name"> </h4>
+              <p class="card-text">Rs.<span id="item1-price"> </span>/-</p>
+              <a href="#" data-name="Poha" data-price="20" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/Masala-Dosa.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Masala Dosa</h4>
+              <p class="card-text">Rs.<span>30</span>/-</p>
+              <a href="#" data-name="Masala-Dosa" data-price="30" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4  col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/chole.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Chhole bhature</h4>
+              <p class="card-text">Rs.<span>35</span>/-</p>
+              <a href="#" data-name="Chhole-bhature" data-price="35" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------Lunch------------->
+    <section id="jump_to_lunch"><br><br><br></section>
+    <div class="container">
+      <h3 class="text-center"><u> Lunch Menu </u></h3>
+      <div class="row">
+        <div class="col-lg-4  col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="images/manchurian.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Manchurian</h4>
+              <p class="card-text">Rs.<span>45</span>/-</p>
+              <a href="#" data-name="Manchurian" data-price="45" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/guj.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Gujarati thali</h4>
+              <p class="card-text">Rs.<span>50</span>/-</p>
+              <a href="#" data-name="Gujarati-thali" data-price="50" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/punj.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Punjabi thali</h4>
+              <p class="card-text">Rs.<span>50</span>/-</p>
+              <a href="#" data-name="Punjabi-thali" data-price="50" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------Beverages------------->
+    <section id="jump_to_beverages"><br><br><br></section>
+    <div class="container">
+      <h3 class="text-center"><u> Bevarages </u></h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/chai.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Chai</h4>
+              <p class="card-text">Rs.<span>7</span>/-</p>
+              <a href="#" data-name="Chai" data-price="7" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/coffeee.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Coffee</h4>
+              <p class="card-text">Rs.<span>10</span>/-</p>
+              <a href="#" data-name="Coffee" data-price="10" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/soft drink.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Any Soft drink(250ml)</h4>
+              <p class="card-text">Rs.<span>18</span>/-</p>
+              <a href="#" data-name="Any-Soft-drink(250ml)" data-price="18" class="add-to-cart btn btn-primary">Add to
+                cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------siders------------->
+    <section id="jump_to_siders"><br><br><br></section>
+    <div class="container">
+      <h3 class="text-center"><u> Siders </u></h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/vadapav.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Vadapav</h4>
+              <p class="card-text">Rs.<span>12</span>/-</p>
+              <a href="#" data-name="Vadapav" data-price="12" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/potato.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Potato wedges</h4>
+              <p class="card-text">Rs.<span>30</span>/-</p>
+              <a href="#" data-name="Potato-wedges" data-price="30" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card" style="width:300px">
+            <img class="card-img-top" src="./images/french fries.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">French fries</h4>
+              <p class="card-text">Rs.<span>35</span>/-</p>
+              <a href="#" data-name="French-fries" data-price="35" class="add-to-cart btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    </div>
+  </section>
+
+  <!---------menu end------------->
+
+  <!----------contact us start--------->
+  <section class="contactus" id="contactus">
+    <div class="container headings text-center">
+      <h1 class="font-weight-bold bg-dark text-white">Contact us </h1>
+      <h3>SCET Catering</h3>
+      <p>Address:Dr. R K Desai Marg, Opp. Mission Hospital, Athwalines, Athwa, Surat,Gujarat 395001
+      </p>
+      <p>Contact No.: 2233648</p>
+    </div>
+  </section>
+
+  <!----------contact us end--------->
+
+  <!---footer-->
+  <footer class="bg-dark text-center text-white">copyright© 2020 All rights recevied</footer>
+
+
+  <!--Sign Up modal window-->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <div class="form-title text-center">
+            <h4>Sign up</h4>
+          </div>
+          <div class="d-flex flex-column text-center">
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email_field" placeholder="Your email address...">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password_field" placeholder="Your password...">
+              </div>
+              <button onclick="signUp()" type="button" class="btn btn-info btn-block btn-round">Sign Up</button>
+            </form>
+
+
+
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <div class="signup-section">Already registered? <a href="#" class="text-info"> Login</a>.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--Login modal window-->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <div class="form-title text-center">
+            <h4>Login</h4>
+          </div>
+          <div class="d-flex flex-column text-center">
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="login_email" placeholder="Your email address...">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="login_password" placeholder="Your password...">
+              </div>
+              <button onclick="login()" type="button" class="btn btn-info btn-block btn-round">Login</button>
+            </form>
+
+
+
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <div class="signup-section">New here ? <a href="#" class="text-info"> Sign Up</a>.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--Cart modal window-->
+  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table">
+
+          </table>
+          <div>Total price: Rs <span class="total-cart"></span></div>
+          <br>
+          <br>
+          <!--Toggle button starts-->
+          <div>
+            <form>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onclick="toggleFunction()">
+                <label class="form-check-label" for="defaultCheck1">
+                  Plastic Cutlery
+                </label>
+              </div>
+              <div class="alert alert-success" role="alert" id="noPlastic">
+                No Cutlery provided.<br>
+                Thank you for reducing single-use plastic!
+              </div>
+              <div class="alert alert-dark" role="alert" id="plastic">
+                Cutlery will be provided.<br>
+                Join us in reducing single-use plastic!
+              </div>
+            </form>
+          </div>
+          <!--Toggle button ends-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="order_now" onclick="order()">Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/homepage.js"></script>
+  <script>
+    // ************************************************
+    // Shopping Cart API
+    // ************************************************
+
+    var shoppingCart = (function () {
+      // =============================
+      // Private methods and propeties
+      // =============================
+      cart = [];
+
+      // Constructor
+      function Item(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+      }
+
+      // Save cart
+      function saveCart() {
+        sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+      }
+
+      // Load cart
+      function loadCart() {
+        cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+      }
+      if (sessionStorage.getItem("shoppingCart") != null) {
+        loadCart();
+      }
+
+
+      // =============================
+      // Public methods and propeties
+      // =============================
+      var obj = {};
+
+      // Add to cart
+      obj.addItemToCart = function (name, price, count) {
+        for (var item in cart) {
+          if (cart[item].name === name) {
+            cart[item].count++;
+            saveCart();
+            return;
+          }
+        }
+        var item = new Item(name, price, count);
+        cart.push(item);
+        saveCart();
+      }
+      // Set count from item
+      obj.setCountForItem = function (name, count) {
+        for (var i in cart) {
+          if (cart[i].name === name) {
+            cart[i].count = count;
+            break;
+          }
+        }
+      };
+      // Remove item from cart
+      obj.removeItemFromCart = function (name) {
+        for (var item in cart) {
+          if (cart[item].name === name) {
+            cart[item].count--;
+            if (cart[item].count === 0) {
+              cart.splice(item, 1);
+            }
+            break;
+          }
+        }
+        saveCart();
+      }
+
+      // Remove all items from cart
+      obj.removeItemFromCartAll = function (name) {
+        for (var item in cart) {
+          if (cart[item].name === name) {
+            cart.splice(item, 1);
+            break;
+          }
+        }
+        saveCart();
+      }
+
+      // Clear cart
+      obj.clearCart = function () {
+        cart = [];
+        saveCart();
+      }
+
+      // Count cart 
+      obj.totalCount = function () {
+        var totalCount = 0;
+        for (var item in cart) {
+          totalCount += cart[item].count;
+        }
+        return totalCount;
+      }
+
+      // Total cart
+      obj.totalCart = function () {
+        var totalCart = 0;
+        for (var item in cart) {
+          totalCart += cart[item].price * cart[item].count;
+        }
+        return Number(totalCart.toFixed(2));
+      }
+
+      // List cart
+      obj.listCart = function () {
+        var cartCopy = [];
+        for (i in cart) {
+          item = cart[i];
+          itemCopy = {};
+          for (p in item) {
+            itemCopy[p] = item[p];
+
+          }
+          itemCopy.total = Number(item.price * item.count).toFixed(2);
+          cartCopy.push(itemCopy)
+        }
+        return cartCopy;
+      }
+
+      // cart : Array
+      // Item : Object/Class
+      // addItemToCart : Function
+      // removeItemFromCart : Function
+      // removeItemFromCartAll : Function
+      // clearCart : Function
+      // countCart : Function
+      // totalCart : Function
+      // listCart : Function
+      // saveCart : Function
+      // loadCart : Function
+      return obj;
+    })();
+
+
+    // *****************************************
+    // Triggers / Events
+    // ***************************************** 
+    // Add item
+    $('.add-to-cart').click(function (event) {
+      event.preventDefault();
+      var name = $(this).data('name');
+      var price = Number($(this).data('price'));
+      shoppingCart.addItemToCart(name, price, 1);
+      displayCart();
+    });
+
+    // Clear items
+    $('.clear-cart').click(function () {
+      shoppingCart.clearCart();
+      displayCart();
+    });
+
+
+    function displayCart() {
+      var cartArray = shoppingCart.listCart();
+      var output = "";
+      for (var i in cartArray) {
+        output += "<tr>"
+          + "<td>" + cartArray[i].name + "</td>"
+          + "<td>(" + cartArray[i].price + ")</td>"
+          + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+          + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+          + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+          + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+          + " = "
+          + "<td>" + cartArray[i].total + "</td>"
+          + "</tr>";
+      }
+      $('.show-cart').html(output);
+      $('.total-cart').html(shoppingCart.totalCart());
+      $('.total-count').html(shoppingCart.totalCount());
+    }
+
+    // Delete item button
+
+    $('.show-cart').on("click", ".delete-item", function (event) {
+      var name = $(this).data('name')
+      shoppingCart.removeItemFromCartAll(name);
+      displayCart();
+    })
+
+
+    // -1
+    $('.show-cart').on("click", ".minus-item", function (event) {
+      var name = $(this).data('name')
+      shoppingCart.removeItemFromCart(name);
+      displayCart();
+    })
+    // +1
+    $('.show-cart').on("click", ".plus-item", function (event) {
+      var name = $(this).data('name')
+      shoppingCart.addItemToCart(name);
+      displayCart();
+    })
+
+    // Item count input
+    $('.show-cart').on("change", ".item-count", function (event) {
+      var name = $(this).data('name');
+      var count = Number($(this).val());
+      shoppingCart.setCountForItem(name, count);
+      displayCart();
+    });
+
+    displayCart();
+
+  </script>
+
+</body>
+
+</html>

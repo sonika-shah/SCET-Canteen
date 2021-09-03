@@ -1,0 +1,168 @@
+*{ margin: 0; padding: 0 ; box-sizing: border-box; 
+   font-family: 'Poppins', sans-serif;
+   }
+
+.navbar-dark{
+	background-color: #6A4C3E !important;
+	color:#fff !important;
+	font-size: 1rem;
+	padding: 1%;
+	
+}
+nav i{
+	color:#fff !important;
+}
+.navbar-brand{
+	padding-top: 1%;
+	font-size: 2rem;
+	padding-right: 2%;
+}
+.show-cart li {
+	display: flex;
+  }
+.center-div{
+	padding-top: 10%;
+}
+#user_div{
+	display:none;
+}
+.header{ 
+   background-image: url('../images/bg2.jpg');
+   height: 100vh;
+   width: 100%;
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+   position: relative;
+
+}
+
+
+.header-contain{
+	width: 100%;
+	height: inherit;
+	color: white;
+	text-align: center;
+	position: relative;
+}
+
+
+
+.center-div p{
+	font-size: 1.3rem !important;
+	padding: 10px 0 20px 0;
+	color: white;
+ 
+}
+
+.header-buttons a{
+	border: 1px solid #fff;
+	border-radius: 100px;
+	margin: 0 5px;
+	padding: 10px 20px;
+	outline: none;
+	color: #fff;
+	font-size: 1rem !important;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.header-buttons a:hover{
+	color: #000;
+	background: #fff;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+.extra-div h2{
+	font-size: 0.9rem !important;
+	margin: 20px 0 15px 0;
+	font-weight: bold;
+	line-height: 1.1;
+	word-spacing: 4px;
+}
+
+.header-aboutus h3{
+	margin: 20px 0 20px 0;
+	font-weight: bold;
+	line-height: 1.1;
+}
+
+.header-aboutus i{
+	color: #654321;
+}
+
+.menu h3{
+	margin: 20px 0 15px 0;
+	
+}
+
+/********about us css start********/
+.header-aboutus{
+	width: 100%; height: auto;
+	margin: 100px 0;
+	text-align: center;
+}
+
+.extra-div{
+	background: #fff;
+	border: medium none;
+	padding: 50px!important;
+	border-radius: 3px;
+	transition: 0.3s;
+}
+
+.extra-div:hover{
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+	transform: translateY(-20px);
+}
+
+
+
+/********about us css end********/
+
+/********menu css start********/
+
+
+.menu {
+	background-color: #fff
+
+}
+
+
+.card:hover{
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+	transform: translateY(-20px);
+}
+
+.card a{
+	border: 1px solid #fff;
+	border-radius: 100px;
+	margin: 0 5px;
+	padding: 10px 20px;
+	outline: none;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.card a:hover{
+	color: #000;
+	background: #fff;
+	text-decoration: none;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+/********menu css end********/
+
+/********toggle css start********/
+#plastic{
+	display: none;
+}
+#noPlastic{
+	display: none;
+}
+/********toggle css end********/
